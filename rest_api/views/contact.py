@@ -2,17 +2,14 @@ from django.http import request
 from rest_framework import generics
 from rest_framework.serializers import Serializer
 from main_app.models import ContactForm
-from .serializers import ContactSerializer
+from rest_api.serializers import ContactSerializer
 from rest_framework.response import Response
 from rest_framework import status
-import environ
 import smtplib 
-env = environ.Env(
-    # set casting, default value
-)
+from core.settings import env
 def sendEmail(to, content): 
     try : 
-        server = smtplib.SMTP('smtp.gmail.com', 587) 
+        server  = smtplib.SMTP('smtp.gmail.com', 587) 
         server.ehlo() 
         server.starttls() 
         global env
@@ -21,7 +18,7 @@ def sendEmail(to, content):
         passwd = env('PASSWORD')
         server.login(email,passwd ) 
         server.sendmail(email, to, content) 
-        server.close() 
+        server.close()
         print("Email Sent!!")
     except Exception as error:
         print(error)
