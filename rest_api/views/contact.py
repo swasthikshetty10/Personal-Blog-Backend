@@ -15,7 +15,7 @@ def sendEmail(to, content):
         global env
         # Enable low security in gmail 
         email = env('EMAIL')
-        passwd = env('PASSWORD')
+        passwd = env('EMAILPASSWORD')
         server.login(email,passwd ) 
         server.sendmail(email, to, content) 
         server.close()
