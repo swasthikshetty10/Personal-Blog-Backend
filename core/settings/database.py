@@ -1,7 +1,7 @@
 from .settings import BASE_DIR , env
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-localhost = True if env('localhost') == 'True' else False
+localhost = True if env('LOCALHOST') == 'True' else False
 if localhost:
     DATABASES = {
         'default': {
