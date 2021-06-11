@@ -11,8 +11,6 @@ if localhost:
     }
 else :
     DATABASES = {
-            'default': {
-
         'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': '',
@@ -20,7 +18,5 @@ else :
         'PASSWORD': '',
         'HOST': '',
         'PORT': '5432',
-    }
-
     }
     }
