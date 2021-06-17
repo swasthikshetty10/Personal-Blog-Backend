@@ -10,3 +10,5 @@ class ContactForm(models.Model):
     time = models.DateTimeField(default=timezone.now)
     def __str__(self) -> str:
         return self.name
+
+
