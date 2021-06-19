@@ -2,18 +2,15 @@
 from .blog import *
 from .contact import *
 from .projectreq import *
-from rest_framework import generics
+from rest_framework.decorators import api_view
 
-
-class apioverview(generics.GenericAPIView):
+@api_view(['GET'])
+def apioverview(request):
     
-    # queryset = ContactForm.objects.all()
-    pass
-    
-    # def post(self ,request , *args , **kwargs):
-    #     print(request.data)
-    #     return self.create(request, *args, **kwargs)
-    # def get_serializer(self, instance=None, data=None, many=False, partial=False):
-    #     print(data)
-    
+    return Response({
+        "API_Routes": {
+        "contact" : "/contact",
+        "login" : "/login",
+        "project_request" : "/projectrequest",
+    }})
     
