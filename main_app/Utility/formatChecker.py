@@ -2,7 +2,7 @@ from django.db.models import FileField
 from django.forms import forms
 from django.template.defaultfilters import filesizeformat
 from django.utils.translation import ugettext_lazy as _
-
+from django.template.defaultfilters import slugify
 class ContentTypeRestrictedFileField(FileField):
     """
     Same as FileField, but you can specify:
@@ -38,3 +38,8 @@ class ContentTypeRestrictedFileField(FileField):
             pass
 
         return data
+    
+def get_filename(instance, filename):
+    title = instance.post.title
+    slug = slugify(title)
+    return "files/%s-%s" % (slug, filename)  
