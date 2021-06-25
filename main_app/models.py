@@ -3,7 +3,6 @@ from django.db.models.fields import TextField
 from django.utils import timezone
 from django.contrib.auth.models import User
 
-# Create your models here.
 class ContactForm(models.Model):
     name = models.CharField(max_length=300 , default= None)
     email = models.EmailField()
@@ -13,4 +12,9 @@ class ContactForm(models.Model):
     def __str__(self) -> str:
         return self.name
 
+
+class ProjectRequests(models.Model):
+    user = models.ForeignKey(User , on_delete = models.CASCADE , null = True)
+    projectName = models.TextField()
+    orderDate = models.DateTimeField(default=timezone.now)
 
