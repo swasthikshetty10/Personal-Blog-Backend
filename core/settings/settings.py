@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'main_app',
     'rest_api',
     'corsheaders',
+    'users',
 ]
 
 MIDDLEWARE = [
