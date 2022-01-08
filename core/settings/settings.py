@@ -87,14 +87,15 @@ WSGI_APPLICATION = 'core.wsgi.application'
 CORS_ALLOWED_ORIGINS = [
     "https://swasthikshetty10.github.io",
     "https://swasthikshetty.me",
+    "http://swasthikshetty.me",
     "http://localhost:3000",
     "http://localhost:8080",
     "http://127.0.0.1:8000"
 ]
 CORS_ORIGIN_WHITELIST = (
-
-       'http://localhost:3000',
-
+    'http://localhost:3000',
+    'https://swasthikshetty.me',
+    'http://swasthikshetty.me'
 )
 CORS_ALLOW_METHODS = [
     'DELETE',
